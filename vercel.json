@@ -8,10 +8,6 @@
   ],
   "routes": [
     {
-      "src": "/logo/(.*)",
-      "dest": "/public/logo/$1"
-    },
-    {
       "src": "/(.*)",
       "dest": "app.js"
     }
