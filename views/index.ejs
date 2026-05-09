@@ -51,7 +51,7 @@
     <style>
         body { background-color: #ffffff; color: #000; overflow-x: hidden; font-family: 'Inter', sans-serif; }
         
-        /* Hero Title Styling - Kembali ke Rata Kiri */
+        /* Hero Title Styling */
         .hero-title { 
             font-size: clamp(2.5rem, 12vw, 7rem); 
             text-align: left; 
@@ -59,12 +59,11 @@
         
         .photo-span {
             display: block;
-            text-align: right; /* Tetap di kanan sesuai permintaan agar variatif */
+            text-align: right; 
             color: #d1d5db; 
             font-style: italic;
         }
 
-        /* Container Teks di Tengah Layar */
         .hero-content-wrapper {
             display: flex;
             flex-direction: column;
@@ -73,7 +72,7 @@
         }
 
         .text-align-wrapper {
-            text-align: left; /* Perataan teks utama kembali ke kiri */
+            text-align: left; 
             max-width: 900px;
             width: 100%;
         }
@@ -121,10 +120,10 @@
         <div class="hero-content-wrapper">
             <div class="text-align-wrapper" id="parallaxContent">
                 <h1 class="hero-title font-bold leading-[0.85] uppercase italic mb-8">
-                    PRINT & <br> <span class="photo-span">PHOTO</span>
+                    PRINT <br> <span class="photo-span">PHOTO</span>
                 </h1>
-                <p class="text-lg md:text-2xl font-medium text-gray-900 mb-10 leading-relaxed">
-                    Layanan cetak rumahan simpel & cepat. <br> 
+                <p class="text-lg md:text-2xl font-medium text-gray-900 mb-10 leading-snug">
+                    Layanan cetak rumahan simpel & cepat. <br class="hidden md:block"> 
                     Buka 24 Jam di Cipare, Kota Serang.
                 </p>
                 
@@ -142,7 +141,7 @@
         </div>
     </header>
 
-    <!-- Bagian bawah tetap sama sesuai instruksi -->
+    <!-- Cara Order Section -->
     <section class="py-24 bg-black text-white px-6">
         <div class="container mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold uppercase mb-16 tracking-tighter" data-aos="fade-up">Cara Order —</h2>
@@ -166,6 +165,7 @@
         </div>
     </section>
 
+    <!-- Layanan Section -->
     <section id="layanan" class="py-32 px-6 bg-gray-50">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="card-order" data-aos="zoom-in">
@@ -181,6 +181,7 @@
         </div>
     </section>
 
+    <!-- Lokasi Section -->
     <section id="lokasi" class="py-24 px-6 border-t border-black/5 bg-white">
         <div class="container mx-auto flex flex-col md:flex-row gap-12 items-center">
             <div class="w-full md:w-1/3" data-aos="fade-up">
@@ -204,15 +205,12 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Script Gerak Parallax - Aktif Real-time saat scroll naik/turun
         window.addEventListener('scroll', function() {
             const scrollPos = window.pageYOffset;
             const textElement = document.getElementById('parallaxContent');
             
-            // Gerak halus mengikuti posisi scroll
             textElement.style.transform = `translateY(${scrollPos * 0.2}px)`;
             
-            // Efek memudar halus
             const opacityValue = 1 - (scrollPos / 600);
             textElement.style.opacity = opacityValue > 0 ? opacityValue : 0;
         });
