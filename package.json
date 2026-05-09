@@ -1,0 +1,14 @@
+{
+  "name": "fotocopy-terdekat-shaning",
+  "version": "1.0.0",
+  "description": "Website SPA Fotocopy Terdekat Serang",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.18.2"
+  }
+}
