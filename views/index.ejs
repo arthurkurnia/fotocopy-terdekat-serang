@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO TITLE: Dominasi kueri nomor 1 sesuai data penelusuran -->
+    <!-- SEO TITLE -->
     <title>Fotocopy Terdekat Serang | Buka 24 Jam | Jasa Print & Cetak Foto</title>
     
     <meta name="description" content="Cari fotocopy terdekat di Serang? Kami buka 24 jam di Cipare. Melayani foto copy terdekat dari lokasi saya sekarang, jasa print dokumen, dan cetak foto kilat.">
@@ -15,7 +15,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- Schema.org: Data Terstruktur Local SEO -->
+    <!-- Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,40 +52,30 @@
         body { background-color: #ffffff; color: #000; overflow-x: hidden; font-family: 'Inter', sans-serif; }
         .hero-title { font-size: clamp(2.5rem, 12vw, 7rem); }
         
-        /* Karakter.png Central Adjustment */
-        .char-container {
+        /* Karakter.png sebagai Background Tengah */
+        .char-background {
             position: absolute;
             z-index: 1;
             pointer-events: none;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        /* Ukuran Gede di Desktop & Web */
-        @media (min-width: 1024px) {
-            .char-container {
-                width: 700px; 
-                opacity: 0.1; /* Transparan agar teks tetap elegan */
-            }
-        }
-        
-        /* Ukuran Gede di Mobile tanpa merusak layout */
-        @media (max-width: 1023px) {
-            .char-container {
-                width: 500px;
-                opacity: 0.15; 
-            }
+            width: 100%;
+            max-width: 900px; /* Sangat besar menutupi area teks */
+            opacity: 0.12; /* Transparan agar teks tetap kontras */
+            filter: grayscale(100%);
         }
 
-        .shape-blob { position: absolute; border: 2px solid #000; z-index: -1; opacity: 0.1; }
-        .circle { border-radius: 50%; width: 200px; height: 200px; top: -50px; right: -50px; }
-        .dots { background-image: radial-gradient(#000 2px, transparent 2px); background-size: 20px 20px; width: 100px; height: 200px; top: 20%; right: 5%; }
+        /* Efek Gerak Parallax untuk Teks */
+        .parallax-text {
+            transition: transform 0.2s cubic-bezier(0,0,0.2,1);
+            will-change: transform;
+        }
 
-        /* Card & Steps */
+        .shape-blob { position: absolute; border: 2px solid #000; z-index: -1; opacity: 0.05; }
+        .circle { border-radius: 50%; width: 300px; height: 300px; top: -100px; right: -100px; }
+        .dots { background-image: radial-gradient(#000 2px, transparent 2px); background-size: 20px 20px; width: 150px; height: 300px; top: 15%; right: 2%; }
+
         .card-order { border: 1px solid #000; padding: 2rem; transition: 0.3s ease; background: #fff; }
         .card-order:hover { background: #000; color: #fff; transform: translateY(-5px); }
         .step-num { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; -webkit-text-stroke: 1px currentColor; color: transparent; }
@@ -107,7 +97,6 @@
                 <span class="font-heading text-lg uppercase tracking-tighter font-extrabold">Fotocopy Terdekat</span>
             </div>
             
-            <!-- Tombol Hubungi: Clean Icon di HP, Teks di Laptop -->
             <a href="https://wa.me/6283122007979" class="btn-black p-2 md:px-6 md:py-2 rounded-full md:rounded-none">
                 <div class="flex items-center gap-2">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.161 1.237 8.404 3.48s3.481 5.229 3.481 8.406c0 6.556-5.332 11.888-11.888 11.888-2.022 0-4.005-.517-5.763-1.498l-6.221 1.621zm5.733-3.784l.411.245c1.42.845 3.051 1.29 4.73 1.29 4.931 0 8.945-4.013 8.945-8.945s-4.013-8.945-8.945-8.945-8.945 4.013-8.945 8.945c0 1.956.643 3.826 1.856 5.352l.269.339-.99 3.606 3.7-.965z"/></svg>
@@ -118,40 +107,40 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="min-h-screen flex items-center relative pt-20 px-6 overflow-hidden">
+    <header class="min-h-screen flex items-center justify-center relative pt-20 px-6 overflow-hidden">
         <div class="shape-blob circle"></div>
         <div class="shape-blob dots"></div>
         
-        <!-- Karakter melayang: Berada di Tengah sebagai background estetik -->
-        <div class="char-container animate-bounce" style="animation-duration: 5s;">
-            <img src="/logo/karakter.png" alt="Karakter" class="w-full h-auto object-contain">
+        <!-- Karakter melayang sebagai Background Center -->
+        <div class="char-background animate-pulse" style="animation-duration: 8s;">
+            <img src="/logo/karakter.png" alt="Background Character" class="w-full h-auto object-contain">
         </div>
 
-        <div class="container mx-auto relative z-10">
-            <div class="max-w-4xl" data-aos="fade-right">
+        <div class="container mx-auto relative z-10 text-center md:text-left">
+            <div class="max-w-4xl mx-auto md:mx-0 parallax-text" id="parallaxContent">
                 <h1 class="hero-title font-bold leading-[0.85] uppercase italic mb-8">
                     PRINT & <br> <span class="text-gray-300 italic">PHOTO.</span>
                 </h1>
-                <p class="text-lg md:text-2xl font-medium text-gray-700 mb-10 leading-relaxed max-w-xl">
+                <p class="text-lg md:text-2xl font-medium text-gray-900 mb-10 leading-relaxed max-w-xl mx-auto md:mx-0">
                     Layanan cetak rumahan simpel & cepat. <br> 
                     Buka 24 Jam di Cipare, Kota Serang.
                 </p>
                 
-                <div class="flex flex-wrap gap-8">
-                    <a href="https://wa.me/623122007979" class="flex items-center gap-3 border-b-2 border-green-500 pb-2 hover:opacity-50 transition group">
+                <div class="flex flex-wrap justify-center md:justify-start gap-8">
+                    <a href="https://wa.me/6283122007979" class="flex items-center gap-3 border-b-2 border-green-500 pb-2 hover:opacity-50 transition group">
                         <img src="/logo/whatsapp-logo.png" class="w-6 h-6 object-contain group-hover:scale-110 transition" alt="WA">
-                        <span class="font-bold uppercase text-sm tracking-widest">WhatsApp</span>
+                        <span class="font-bold uppercase text-sm tracking-widest text-black">WhatsApp</span>
                     </a>
                     <a href="https://instagram.com/fotocopy.terdekat" class="flex items-center gap-3 border-b-2 border-pink-500 pb-2 hover:opacity-50 transition group">
                         <img src="/logo/instagram-logo.png" class="w-6 h-6 object-contain group-hover:scale-110 transition" alt="IG">
-                        <span class="font-bold uppercase text-sm tracking-widest">Instagram</span>
+                        <span class="font-bold uppercase text-sm tracking-widest text-black">Instagram</span>
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Cara Order Section -->
+    <!-- Bagian bawah tidak berubah -->
     <section class="py-24 bg-black text-white px-6">
         <div class="container mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold uppercase mb-16 tracking-tighter" data-aos="fade-up">Cara Order —</h2>
@@ -175,7 +164,6 @@
         </div>
     </section>
 
-    <!-- Jasa Section -->
     <section id="layanan" class="py-32 px-6 bg-gray-50">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="card-order" data-aos="zoom-in">
@@ -191,7 +179,6 @@
         </div>
     </section>
 
-    <!-- Location (Full Color Maps) -->
     <section id="lokasi" class="py-24 px-6 border-t border-black/5 bg-white">
         <div class="container mx-auto flex flex-col md:flex-row gap-12 items-center">
             <div class="w-full md:w-1/3" data-aos="fade-up">
@@ -205,13 +192,11 @@
         </div>
     </section>
 
-    <!-- SEO Footer (Hidden) -->
     <div class="opacity-0 h-0 overflow-hidden">
         <h2>jasa fotocopy 24 jam di serang banten</h2>
         <p>Cari fotokopian terdekat buka sekarang di Kota Serang? Kami di Cipare melayani fotocopy terdekat 24 jam dari lokasi saya sekarang.</p>
     </div>
 
-    <!-- Footer -->
     <footer class="py-12 bg-white text-center border-t border-black/5">
         <p class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-30">
             &copy; 2026 Fotocopy Terdekat — Serang
@@ -222,6 +207,15 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
+
+        // Script untuk Efek Gerak Teks (Parallax) saat Scroll
+        window.addEventListener('scroll', function() {
+            const scrollPos = window.pageYOffset;
+            const textElement = document.getElementById('parallaxContent');
+            // Teks akan bergerak pelan ke atas saat di-scroll
+            textElement.style.transform = `translateY(${scrollPos * 0.4}px)`;
+            textElement.style.opacity = 1 - (scrollPos / 700); // Teks memudar perlahan
+        });
     </script>
 </body>
 </html>
