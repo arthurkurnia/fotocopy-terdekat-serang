@@ -51,16 +51,16 @@
     <style>
         body { background-color: #ffffff; color: #000; overflow-x: hidden; font-family: 'Inter', sans-serif; }
         
-        /* Hero Title Styling */
+        /* Hero Title Styling - Kembali ke Rata Kiri */
         .hero-title { 
             font-size: clamp(2.5rem, 12vw, 7rem); 
-            text-align: right; /* Penulisan dari kanan */
+            text-align: left; 
         }
         
         .photo-span {
             display: block;
-            text-align: right;
-            color: #d1d5db; /* Warna abu-abu (text-gray-300) */
+            text-align: right; /* Tetap di kanan sesuai permintaan agar variatif */
+            color: #d1d5db; 
             font-style: italic;
         }
 
@@ -68,13 +68,14 @@
         .hero-content-wrapper {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Memposisikan seluruh blok teks di tengah */
+            align-items: center; 
             width: 100%;
         }
 
-        .text-align-right-wrapper {
-            text-align: right; /* Isi teks di dalam blok tetap rata kanan */
+        .text-align-wrapper {
+            text-align: left; /* Perataan teks utama kembali ke kiri */
             max-width: 900px;
+            width: 100%;
         }
 
         /* Blob & Dots Background */
@@ -116,11 +117,9 @@
     <header class="min-h-screen flex items-center justify-center relative pt-20 px-6 overflow-hidden">
         <div class="shape-blob circle"></div>
         <div class="shape-blob dots"></div>
-        
-        <!-- Karakter PNG Dihapus Sesuai Instruksi -->
 
         <div class="hero-content-wrapper">
-            <div class="text-align-right-wrapper" id="parallaxContent">
+            <div class="text-align-wrapper" id="parallaxContent">
                 <h1 class="hero-title font-bold leading-[0.85] uppercase italic mb-8">
                     PRINT & <br> <span class="photo-span">PHOTO</span>
                 </h1>
@@ -129,7 +128,7 @@
                     Buka 24 Jam di Cipare, Kota Serang.
                 </p>
                 
-                <div class="flex flex-wrap justify-end gap-8">
+                <div class="flex flex-wrap justify-start gap-8">
                     <a href="https://wa.me/6283122007979" class="flex items-center gap-3 border-b-2 border-green-500 pb-2 hover:opacity-50 transition group">
                         <img src="/logo/whatsapp-logo.png" class="w-6 h-6 object-contain group-hover:scale-110 transition" alt="WA">
                         <span class="font-bold uppercase text-sm tracking-widest text-black">WhatsApp</span>
@@ -143,7 +142,7 @@
         </div>
     </header>
 
-    <!-- Cara Order Section -->
+    <!-- Bagian bawah tetap sama sesuai instruksi -->
     <section class="py-24 bg-black text-white px-6">
         <div class="container mx-auto">
             <h2 class="text-2xl md:text-3xl font-bold uppercase mb-16 tracking-tighter" data-aos="fade-up">Cara Order —</h2>
@@ -167,7 +166,6 @@
         </div>
     </section>
 
-    <!-- Layanan Section -->
     <section id="layanan" class="py-32 px-6 bg-gray-50">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="card-order" data-aos="zoom-in">
@@ -183,7 +181,6 @@
         </div>
     </section>
 
-    <!-- Lokasi Section -->
     <section id="lokasi" class="py-24 px-6 border-t border-black/5 bg-white">
         <div class="container mx-auto flex flex-col md:flex-row gap-12 items-center">
             <div class="w-full md:w-1/3" data-aos="fade-up">
@@ -192,16 +189,10 @@
                 <p class="text-gray-400 text-sm mt-2 uppercase tracking-widest font-bold">24 Jam Non-Stop</p>
             </div>
             <div class="w-full md:w-2/3 h-96 rounded-2xl overflow-hidden border-4 border-black shadow-2xl">
-                <!-- Direct Google Maps Embed FCT Jasa Print Kota Serang -->
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.06733221975!2d106.1546174!3d-6.1228742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418ba3a07ab459%3A0x2d1b94567facc0df!2sFCT%20Jasa%20Print%20Kota%20Serang!5e0!3m2!1sid!2sid!4v1715243813456!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
-
-    <div class="opacity-0 h-0 overflow-hidden">
-        <h2>jasa fotocopy 24 jam di serang banten</h2>
-        <p>Cari fotokopian terdekat buka sekarang di Kota Serang? Kami di Cipare melayani fotocopy terdekat 24 jam dari lokasi saya sekarang.</p>
-    </div>
 
     <footer class="py-12 bg-white text-center border-t border-black/5">
         <p class="text-[10px] font-bold uppercase tracking-[0.4em] opacity-30">
@@ -209,22 +200,20 @@
         </p>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Script untuk Efek Gerak Teks (Parallax) Responsif Naik & Turun
+        // Script Gerak Parallax - Aktif Real-time saat scroll naik/turun
         window.addEventListener('scroll', function() {
             const scrollPos = window.pageYOffset;
             const textElement = document.getElementById('parallaxContent');
             
-            // Menggerakkan teks secara real-time berdasarkan posisi scroll (naik maupun turun)
-            // Faktor 0.3 menentukan kecepatan gerak teks relatif terhadap scroll
-            textElement.style.transform = `translateY(${scrollPos * 0.3}px)`;
+            // Gerak halus mengikuti posisi scroll
+            textElement.style.transform = `translateY(${scrollPos * 0.2}px)`;
             
-            // Efek memudar yang halus saat di-scroll jauh ke bawah
-            const opacityValue = 1 - (scrollPos / 800);
+            // Efek memudar halus
+            const opacityValue = 1 - (scrollPos / 600);
             textElement.style.opacity = opacityValue > 0 ? opacityValue : 0;
         });
     </script>
